@@ -36,23 +36,24 @@ export default function Portfolio() {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "MatchFlow",
       description:
-        "Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.",
-      tech: ["Next.js", "TypeScript", "Stripe", "PostgreSQL", "Tailwind CSS"],
-      image: "/placeholder.svg?height=200&width=400",
-      github: "https://github.com",
-      live: "https://example.com",
+        "One-click web app that extracts invoice data from PDFs and matches it against purchase orders, eliminating manual reconciliation.",
+      tech: ["ASP.NET", "React", "Nginx", "Azure", "SQL Server"],
+      image: "/matchflow.png",
+      github: "https://github.com/datpham0412/invoice-processor",
+      live: "https://matchflow.app",
       featured: true,
     },
     {
-      title: "Task Management App",
-      description: "Collaborative project management tool with real-time updates, team collaboration, and analytics.",
-      tech: ["React", "Node.js", "Socket.io", "MongoDB", "Material-UI"],
-      image: "/placeholder.svg?height=200&width=400",
-      github: "https://github.com",
-      live: "https://example.com",
+      title: "Quest Developer Portal",
+      description: "Centralized portal for internal and external developers to explore, test, and integrate with Quest Payment Systems' APIs.",
+      tech: ["ASP.NET", "React", "Clerk", "AWS", "Next.js"],
+      image: "/dev_portal.png",
+      github: null,
+      live: "https://dev.questps.com.au/",
       featured: true,
+      privateRepo: true,
     },
     {
       title: "AI Chat Application",
@@ -416,16 +417,18 @@ export default function Portfolio() {
             {projects.map((project) => (
               <Card key={project.title} className={project.featured ? "md:col-span-2" : ""}>
                 <div className={`grid gap-6 ${project.featured ? "lg:grid-cols-2" : ""}`}>
-                  <div className="relative overflow-hidden rounded-lg">
-                    <Image
-                      src={project.image || "/placeholder.svg"}
-                      alt={project.title}
-                      width={400}
-                      height={200}
-                      className="aspect-video object-cover transition-transform hover:scale-105"
-                    />
+                  <div className="relative overflow-hidden rounded-lg ml-4">
+                    <a href={project.live} target="_blank" rel="noopener noreferrer">
+                      <Image
+                        src={project.image || "/placeholder.svg"}
+                        alt={project.title}
+                        width={400}
+                        height={200}
+                        className="aspect-video object-cover transition-transform hover:scale-105 rounded-lg"
+                      />
+                    </a>
                   </div>
-                  <div className="flex flex-col justify-center space-y-4 p-6 text-center lg:text-left">
+                  <div className="flex flex-col justify-center space-y-4 p-6 text-center lg:text-left rounded-lg">
                     <div>
                       <h3 className="text-2xl font-bold">{project.title}</h3>
                       <p className="mt-2 text-muted-foreground">{project.description}</p>
@@ -438,17 +441,24 @@ export default function Portfolio() {
                       ))}
                     </div>
                     <div className="flex gap-4 justify-center lg:justify-start">
-                      <Button variant="outline" size="sm" asChild>
-                        <Link href={project.github}>
+                      {project.github && !project.privateRepo ? (
+                        <Button variant="outline" size="sm" asChild>
+                          <a href={project.github} target="_blank" rel="noopener noreferrer">
+                            <Github className="mr-2 h-4 w-4" />
+                            Code
+                          </a>
+                        </Button>
+                      ) : (
+                        <Button variant="outline" size="sm" disabled title="Private repository">
                           <Github className="mr-2 h-4 w-4" />
-                          Code
-                        </Link>
-                      </Button>
+                          Private
+                        </Button>
+                      )}
                       <Button size="sm" asChild>
-                        <Link href={project.live}>
+                        <a href={project.live} target="_blank" rel="noopener noreferrer">
                           <ExternalLink className="mr-2 h-4 w-4" />
                           Live Demo
-                        </Link>
+                        </a>
                       </Button>
                     </div>
                   </div>
