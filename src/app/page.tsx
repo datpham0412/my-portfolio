@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -22,11 +24,22 @@ import {
   Clock,
   Activity,
   Plane,
+  ChevronDown,
+  ChevronUp,
 } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { useState } from "react"
 
 export default function Portfolio() {
+  const [expandedJobs, setExpandedJobs] = useState<{ [key: number]: boolean }>({})
+
+  const toggleJobExpansion = (jobIndex: number) => {
+    setExpandedJobs(prev => ({
+      ...prev,
+      [jobIndex]: !prev[jobIndex]
+    }))
+  }
   const skills = [
     { category: "Frontend", items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vue.js"] },
     { category: "Backend", items: ["Node.js", "Python", "PostgreSQL", "ASP.NET", "Redis"] },
@@ -75,30 +88,55 @@ export default function Portfolio() {
     },
   ]
 
-  const experience = [
+    const experience = [
     {
-      title: "Senior Full Stack Developer",
-      company: "Tech Innovations Inc.",
-      period: "2022 - Present",
-      location: "San Francisco, CA",
+      title: "Software Engineer Intern",
+      company: "Quest Payment Systems",
+      companyUrl: "https://questps.com.au/",
+      period: "Dec 2023 - Dec 2024",
+      location: "Melbourne, Australia",
+      type: "Software Development",
       description:
-        "Led development of scalable web applications serving 100K+ users. Mentored junior developers and implemented CI/CD pipelines.",
+        "Built and maintained key platforms for both internal operations and external developers, including a developer portal,  and a market-intel mobile app.",
+      achievements: [
+        "Developed the Quest Developer Portal from scratch (ASP.NET + React), enabling seamless API onboarding for clients like JPMorgan and Coles.",
+        "Designed a real-time analytics dashboard (Redis + PostgreSQL) that kept FID under 100 ms at 10 K concurrent users.",
+        "Implemented CI/CD pipelines and automated tests with Jenkins & S3, boosting deployment efficiency by 60 % and slashing infra costs by 80 %.",
+        "Hardened API security with JWT auth and auto-expiring Redis-backed GUID endpoints.",
+        "Lead development of a Flutter mobile app for market intelligence—aggregating terminal data across Australia to power operations-analytics and strategic planning."
+      ],
     },
     {
-      title: "Frontend Developer",
-      company: "Digital Solutions Ltd.",
-      period: "2020 - 2022",
-      location: "New York, NY",
+      title: "Bartender & Customer Service",
+      company: "Sam's Bar & Grill",
+      companyUrl: "https://www.samsbargrill.com.au/",
+      period: "2022 - 2023",
+      location: "Melbourne, Australia",
+      type: "Hospitality",
       description:
-        "Developed responsive web applications using React and TypeScript. Collaborated with UX/UI designers to implement pixel-perfect designs.",
+        "Fine dining restaurant experience showcasing exceptional communication and customer service skills.",
+        achievements: [
+          "Delivered premium dining experiences in a fast-paced fine dining environment, consistently maintaining high service standards.",
+          "Developed strong communication and interpersonal skills through direct customer interaction and team collaboration.",
+          "Managed multiple tables simultaneously while ensuring attention to detail and customer satisfaction.",
+          "Collaborated effectively with kitchen staff and management to ensure smooth restaurant operations.",
+        ],
     },
     {
-      title: "Junior Developer",
-      company: "StartupXYZ",
-      period: "2019 - 2020",
-      location: "Austin, TX",
+      title: "Server & Food Service",
+      company: "District Pho Restaurant",
+      companyUrl: "https://www.instagram.com/districtpho?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      period: "2021 - 2022",
+      location: "Melbourne, Australia",
+      type: "Hospitality",
       description:
-        "Built and maintained web applications using modern JavaScript frameworks. Participated in agile development processes.",
+        "Customer-focused role in a busy Vietnamese restaurant, building foundational service and teamwork skills.",
+        achievements: [
+          "Provided friendly and efficient customer service in a high-volume restaurant environment.",
+          "Gained valuable experience in multitasking, time management, and working under pressure.",
+          "Developed cultural awareness and communication skills serving diverse customer base.",
+          "Maintained high standards of food safety and restaurant cleanliness protocols.",
+        ],
     },
   ]
 
@@ -510,40 +548,121 @@ export default function Portfolio() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="w-full flex justify-center py-24 md:py-32">
+      <section id="experience" className="w-full flex justify-center py-24 md:py-32 bg-muted/20">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-[800px] text-center">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Experience</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Professional Experience</h2>
             <p className="mt-4 text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              My professional journey and the companies I've had the pleasure to work with.
+              My journey across software development and hospitality, building both technical expertise and
+              interpersonal skills.
             </p>
           </div>
-          <div className="mt-16 space-y-8 max-w-4xl mx-auto">
-            {experience.map((job, index) => (
-              <Card key={index}>
-                <CardHeader>
-                  <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between text-center sm:text-left">
-                    <div>
-                      <CardTitle>{job.title}</CardTitle>
-                      <CardDescription className="text-lg font-medium">{job.company}</CardDescription>
-                    </div>
-                    <div className="flex flex-col gap-1 text-sm text-muted-foreground sm:text-right">
-                      <div className="flex items-center gap-1 justify-center sm:justify-end">
-                        <Calendar className="h-4 w-4" />
-                        {job.period}
-                      </div>
-                      <div className="flex items-center gap-1 justify-center sm:justify-end">
-                        <MapPin className="h-4 w-4" />
-                        {job.location}
-                      </div>
-                    </div>
+
+          <div className="mt-16 max-w-6xl mx-auto">
+            {/* Experience Timeline */}
+            <div className="relative">
+              {/* Timeline Line */}
+              <div className="absolute left-8 top-0 h-full w-0.5 bg-border"></div>
+
+              {experience.map((job, index) => (
+                <div key={index} className="relative flex items-start mb-12">
+                  {/* Timeline Dot */}
+                  <div className="absolute left-8 md:left-8 w-4 h-4 bg-background border-4 border-foreground rounded-full z-10"></div>
+
+                  {/* Content Card - Always on the right side */}
+                  <div className="ml-16 w-full">
+                    <Card className="group hover:shadow-lg transition-all duration-300">
+                      <CardHeader>
+                        <div className="flex items-start justify-between mb-2">
+                          <div className="flex-1">
+                            <div className="flex items-center gap-2 mb-1">
+                              <Badge
+                                variant={job.type === "Software Development" ? "default" : "secondary"}
+                                className="text-xs"
+                              >
+                                {job.type}
+                              </Badge>
+                            </div>
+                            <CardTitle className="text-xl group-hover:text-foreground/80 transition-colors">
+                              {job.title}
+                            </CardTitle>
+                            <CardDescription className="text-lg font-medium text-foreground/70">
+                              {job.companyUrl ? (
+                                <Link
+                                  href={job.companyUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="hover:text-foreground transition-colors flex items-center gap-1 group"
+                                >
+                                  {job.company}
+                                  <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                                </Link>
+                              ) : (
+                                job.company
+                              )}
+                            </CardDescription>
+                          </div>
+                        </div>
+                        <div className="flex flex-col gap-1 text-sm text-muted-foreground">
+                          <div className="flex items-center gap-1">
+                            <Calendar className="h-4 w-4" />
+                            {job.period}
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <MapPin className="h-4 w-4" />
+                            {job.location}
+                          </div>
+                        </div>
+                      </CardHeader>
+                      <CardContent className="space-y-4">
+                        <p className="text-muted-foreground leading-relaxed">{job.description}</p>
+
+                        {/* Key Achievements */}
+                        <div>
+                          <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                            <ArrowRight className="h-4 w-4" />
+                            Key Achievements
+                          </h4>
+                          <ul className="space-y-2">
+                            {job.achievements
+                              .slice(0, expandedJobs[index] ? job.achievements.length : (job.type === "Software Development" ? 4 : 3))
+                              .map((achievement, achievementIndex) => (
+                                <li
+                                  key={achievementIndex}
+                                  className="text-sm text-muted-foreground leading-relaxed flex items-start gap-2"
+                                >
+                                  <span className="w-1.5 h-1.5 bg-foreground/60 rounded-full mt-2 flex-shrink-0"></span>
+                                  <span>{achievement}</span>
+                                </li>
+                              ))}
+                            {job.achievements.length > (job.type === "Software Development" ? 4 : 3) && (
+                              <li>
+                                <button
+                                  onClick={() => toggleJobExpansion(index)}
+                                  className="text-sm text-muted-foreground/60 hover:text-foreground/80 transition-colors flex items-center gap-1 group"
+                                >
+                                  {expandedJobs[index] ? (
+                                    <>
+                                      <ChevronUp className="h-3 w-3" />
+                                      Show less
+                                    </>
+                                  ) : (
+                                    <>
+                                      <ChevronDown className="h-3 w-3" />
+                                      + {job.achievements.length - (job.type === "Software Development" ? 4 : 3)} more achievements
+                                    </>
+                                  )}
+                                </button>
+                              </li>
+                            )}
+                          </ul>
+                        </div>
+                      </CardContent>
+                    </Card>
                   </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground text-center sm:text-left">{job.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
