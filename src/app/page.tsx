@@ -136,270 +136,310 @@ export default function Portfolio() {
         </div>
       </nav>
 
-      {/* Professional Hero Section */}
-      <section className="relative w-full flex justify-center lg:py-16">
+      {/* Enhanced Hero Section - Mimicking the Beautiful Style */}
+      <section className="relative w-full flex justify-center min-h-screen py-12">
         <div className="container mx-auto px-4 relative">
-          <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-12">
             {/* Content */}
-            <div className="flex flex-col space-y-6 text-center lg:text-left order-2 lg:order-1">
-              {/* Badge */}
-              <div className="flex justify-center lg:justify-start">
-              </div>
-
-              {/* Main heading */}
+            <div className="space-y-8">
               <div className="space-y-4">
-                <h1 className="text-4xl font-bold tracking-tight sm:text-5xl xl:text-6xl lg:text-left">
-                  <span className="block">Software</span>
-                  <span className="block text-foreground/80">Engineer</span>
-                </h1>
-                <h2 className="text-xl text-muted-foreground sm:text-2xl font-medium">
-                  Driven by curiosity. Committed to impact.
+                <h1 className="text-5xl lg:text-6xl font-bold text-foreground">Hi, I'm Dat Pham</h1>
+                <h2 className="text-2xl lg:text-3xl font-semibold text-muted-foreground flex items-center">
+                  <span>Software Engineer</span>
                 </h2>
               </div>
 
-              {/* Description */}
-              <p className="max-w-[600px] text-muted-foreground text-lg leading-relaxed mx-auto lg:mx-0">
-                With 1+ years' professional experience, I see software as a bridge—turning complex needs into
+              <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
+              With 1+ years' professional experience, I see software as a bridge—turning complex needs into
                 <span className="font-medium text-foreground"> intuitive solutions</span> that people actually love to
                 use.
               </p>
 
+              {/* Social Links */}
+              <div className="flex items-center space-x-4">
+                <span className="text-foreground font-medium">Follow me on:</span>
+                <div className="flex space-x-3">
+                  <Link
+                    href="https://github.com/datpham0412"
+                    className="w-10 h-10 bg-muted rounded-full flex items-center justify-center text-muted-foreground hover:bg-foreground hover:text-background transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1"
+                  >
+                    <Github className="h-5 w-5" />
+                  </Link>
+                  <Link
+                    href="https://www.linkedin.com/in/dat-pham-4b79b0219/"
+                    className="w-10 h-10 bg-muted rounded-full flex items-center justify-center text-muted-foreground hover:bg-foreground hover:text-background transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1"
+                  >
+                    <Linkedin className="h-5 w-5" />
+                  </Link>
+                  <Link
+                    href="mailto:tiendat041202@gmail.com"
+                    className="w-10 h-10 bg-muted rounded-full flex items-center justify-center text-muted-foreground hover:bg-foreground hover:text-background transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1"
+                  >
+                    <Mail className="h-5 w-5" />
+                  </Link>
+                </div>
+              </div>
+
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-                <Button size="lg" className="group" asChild>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button
+                  size="lg"
+                  className="shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                  asChild
+                >
                   <Link href="#projects">
-                    View My Work
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    <Download className="mr-2 h-5 w-5" />
+                    Download CV
                   </Link>
                 </Button>
-                <Button variant="outline" size="lg" asChild>
-                  <Link href="#contact">Get In Touch</Link>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 bg-transparent"
+                  asChild
+                >
+                  <Link href="#contact">
+                    <Mail className="mr-2 h-5 w-5" />
+                    Contact Me
+                  </Link>
                 </Button>
               </div>
 
-              {/* Social Links */}
-              <div className="flex items-center space-x-6 pt-6 justify-center lg:justify-start">
-                <Link
-                  href="https://github.com/datpham0412"
-                  className="text-muted-foreground hover:text-foreground transition-colors p-2 hover:bg-muted rounded-full"
-                >
-                  <Github className="h-5 w-5" />
-                  <span className="sr-only">GitHub</span>
-                </Link>
-                <Link
-                  href="https://www.linkedin.com/in/dat-pham-4b79b0219/"
-                  className="text-muted-foreground hover:text-foreground transition-colors p-2 hover:bg-muted rounded-full"
-                >
-                  <Linkedin className="h-5 w-5" />
-                  <span className="sr-only">LinkedIn</span>
-                </Link>
-                <Link
-                  href="mailto:tiendat041202@gmail.com"
-                  className="text-muted-foreground hover:text-foreground transition-colors p-2 hover:bg-muted rounded-full"
-                >
-                  <Mail className="h-5 w-5" />
-                  <span className="sr-only">Email</span>
-                </Link>
+              {/* Quick Stats */}
+              <div className="mt-6">
+                <h4 className="text-left text-sm font-semibold text-foreground mb-3">Quick Stats:</h4>
+                <div className="flex flex-wrap gap-3 justify-start">
+                  <div className="flex items-center space-x-2 px-3 py-2 bg-background rounded-full shadow-md border border-border hover:border-foreground hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <Calendar className="text-foreground text-lg" />
+                    <div className="flex flex-col leading-tight">
+                      <span className="text-xs font-semibold text-foreground">1+</span>
+                      <span className="text-[10px] text-muted-foreground">Years Experience</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-2 px-3 py-2 bg-background rounded-full shadow-md border border-border hover:border-foreground hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <Code className="text-foreground text-lg" />
+                    <div className="flex flex-col leading-tight">
+                      <span className="text-xs font-semibold text-foreground">2+</span>
+                      <span className="text-[10px] text-muted-foreground">Platforms Launched</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-2 px-3 py-2 bg-background rounded-full shadow-md border border-border hover:border-foreground hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <Users className="text-foreground text-lg" />
+                    <div className="flex flex-col leading-tight">
+                      <span className="text-xs font-semibold text-foreground">5+</span>
+                      <span className="text-[10px] text-muted-foreground">Happy Clients</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-2 px-3 py-2 bg-background rounded-full shadow-md border border-border hover:border-foreground hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <Server className="text-foreground text-lg" />
+                    <div className="flex flex-col leading-tight">
+                      <span className="text-xs font-semibold text-foreground">10+</span>
+                      <span className="text-[10px] text-muted-foreground">Tasks Automated</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* Avatar */}
-            <div className="flex items-center justify-center order-1 lg:order-2">
-              <div className="relative">
-                {/* Subtle shadow */}
-                <div className="absolute -inset-4 bg-foreground/5 rounded-full blur-2xl" />
-
-                {/* Avatar container */}
-                <div className="relative bg-background rounded-full p-2">
-                  <Avatar className="h-64 w-64 sm:h-72 sm:w-72 border-4 border-border shadow-2xl">
-                    <AvatarImage src="/avatar.jpg" alt="Dat Pham" className="object-cover" />
-                    <AvatarFallback className="text-4xl font-bold bg-muted text-foreground">DP</AvatarFallback>
-                  </Avatar>
-                </div>
-
-                {/* Minimal floating elements */}
-                <div className="absolute -top-4 -right-4 bg-foreground text-background rounded-full p-3 shadow-lg">
-                  <Code className="h-6 w-6" />
-                </div>
-                <div className="absolute -bottom-4 -left-4 bg-muted text-foreground rounded-full p-3 shadow-lg">
-                  <Globe className="h-6 w-6" />
-                </div>
+            {/* Avatar with Floating Tech Icons */}
+            <div className="relative flex justify-center items-center">
+              <div className="relative z-10">
+                <Avatar className="w-80 h-80 lg:w-96 lg:h-96 shadow-2xl border-8 border-background hover:shadow-3xl hover:-translate-y-2 transition-all duration-300">
+                  <AvatarImage src="/avatar.jpg" alt="Dat Pham" className="object-cover" />
+                  <AvatarFallback className="text-6xl font-bold bg-muted text-foreground">DP</AvatarFallback>
+                </Avatar>
               </div>
-            </div>
-          </div>
 
-          {/* Professional Stats */}
-          <div className="mt-20 relative">
-            <div className="relative bg-muted/30 border rounded-2xl p-8">
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-                <div className="text-center group">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-muted rounded-full mb-4 group-hover:bg-muted/80 transition-colors">
-                    <Calendar className="h-8 w-8 text-foreground" />
-                  </div>
-                  <div className="text-3xl font-bold text-foreground mb-2">1+</div>
-                  <div className="text-sm text-muted-foreground font-medium">Years Experience</div>
-                </div>
-                <div className="text-center group">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-muted rounded-full mb-4 group-hover:bg-muted/80 transition-colors">
-                    <Code className="h-8 w-8 text-foreground" />
-                  </div>
-                  <div className="text-3xl font-bold text-foreground mb-2">2+</div>
-                  <div className="text-sm text-muted-foreground font-medium">Platforms Launched</div>
-                </div>
-                <div className="text-center group">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-muted rounded-full mb-4 group-hover:bg-muted/80 transition-colors">
-                    <Server className="h-8 w-8 text-foreground" />
-                  </div>
-                  <div className="text-3xl font-bold text-foreground mb-2">10+</div>
-                  <div className="text-sm text-muted-foreground font-medium">Tasks Automated</div>
-                </div>
+              {/* Floating Tech Icons */}
+              <div
+                className="absolute top-0 left-20 w-16 h-16 bg-background rounded-full shadow-lg border border-border flex items-center justify-center hover:scale-110 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-bounce cursor-pointer"
+                style={{ animationDelay: "0s", animationDuration: "3s" }}
+              >
+                <Globe className="h-6 w-6 text-foreground" />
+              </div>
+              <div
+                className="absolute top-0 right-0 w-16 h-16 bg-background rounded-full shadow-lg border border-border flex items-center justify-center hover:scale-110 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-bounce cursor-pointer"
+                style={{ animationDelay: "0.5s", animationDuration: "3s" }}
+              >
+                <Code className="h-6 w-6 text-foreground" />
+              </div>
+              <div
+                className="absolute bottom-0 left-10 w-16 h-16 bg-background rounded-full shadow-lg border border-border flex items-center justify-center hover:scale-110 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-bounce cursor-pointer"
+                style={{ animationDelay: "1s", animationDuration: "3s" }}
+              >
+                <Database className="h-6 w-6 text-foreground" />
+              </div>
+              <div
+                className="absolute bottom-10 right-12 w-16 h-16 bg-background rounded-full shadow-lg border border-border flex items-center justify-center hover:scale-110 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-bounce cursor-pointer"
+                style={{ animationDelay: "1.5s", animationDuration: "3s" }}
+              >
+                <Server className="h-6 w-6 text-foreground" />
+              </div>
+              <div
+                className="absolute top-20 left-0 w-16 h-16 bg-background rounded-full shadow-lg border border-border flex items-center justify-center hover:scale-110 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-bounce cursor-pointer"
+                style={{ animationDelay: "2s", animationDuration: "3s" }}
+              >
+                <GitBranch className="h-6 w-6 text-foreground" />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Professional About Section */}
-      <section id="about" className="w-full flex justify-center py-24 md:py-32 relative">
-        <div className="absolute inset-0 bg-muted/20" />
-        <div className="container mx-auto px-4 relative">
-          {/* Header */}
-          <div className="mx-auto max-w-[800px] text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-muted text-foreground px-4 py-2 rounded-full text-sm font-medium mb-6">
-              <span className="w-2 h-2 bg-foreground rounded-full"></span>
-              About Me
-            </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4">
-              Hi, I'm <span className="text-foreground/80">Dat Pham</span>
-            </h2>
-            <p className="text-xl text-muted-foreground font-medium">
-              Final-year Software Engineering student with 1+ years of hands-on experience.
-            </p>
-          </div>
-
-          {/* What Drives Me */}
-          <div className="max-w-6xl mx-auto mb-16">
-            <div className="text-center mb-12">
-              <h3 className="text-2xl font-bold mb-4 flex items-center justify-center gap-2">
-                <span className="w-8 h-8 bg-muted rounded-full flex items-center justify-center">
-                  <ArrowRight className="h-4 w-4 text-foreground" />
-                </span>
-                What drives me
-              </h3>
-            </div>
-
-            <div className="grid gap-6 md:grid-cols-3">
-              <Card className="group hover:shadow-lg transition-all duration-300 border-l-4 border-l-muted hover:border-l-foreground/20">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-muted/80 transition-colors">
-                      <Search className="h-6 w-6 text-foreground" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-lg mb-2 text-foreground">Curiosity</h4>
-                      <p className="text-muted-foreground leading-relaxed">
-                        I've been taking things apart since I was a kid—first gadgets, now systems and code.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="group hover:shadow-lg transition-all duration-300 border-l-4 border-l-muted hover:border-l-foreground/20">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-muted/80 transition-colors">
-                      <Target className="h-6 w-6 text-foreground" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-lg mb-2 text-foreground">Real-world Impact</h4>
-                      <p className="text-muted-foreground leading-relaxed">
-                        I built an automated invoice processor to free my team from manual busy-work.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="group hover:shadow-lg transition-all duration-300 border-l-4 border-l-muted hover:border-l-foreground/20">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-muted/80 transition-colors">
-                      <Users className="h-6 w-6 text-foreground" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-lg mb-2 text-foreground">Human-centered Design</h4>
-                      <p className="text-muted-foreground leading-relaxed">
-                        I believe the best software disappears, letting people focus on what really matters.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-
-          {/* When I'm Off-the-Clock */}
-          <div className="max-w-4xl mx-auto mb-16">
-            <Card className="bg-muted/50 border-muted">
-              <CardContent className="p-8 text-center">
-                <div className="flex items-center justify-center gap-2 mb-4">
-                  <span className="w-8 h-8 bg-muted rounded-full flex items-center justify-center">
-                    <Clock className="h-4 w-4 text-foreground" />
-                  </span>
-                  <h3 className="text-2xl font-bold">When I'm off-the-clock</h3>
-                </div>
-                <div className="flex items-center justify-center gap-8 text-lg">
-                  <div className="flex items-center gap-3 bg-background/80 rounded-full px-6 py-3 border">
-                    <Activity className="h-5 w-5 text-foreground" />
-                    <span className="font-medium">Shooting hoops</span>
-                  </div>
-                  <div className="hidden sm:block w-px h-8 bg-border"></div>
-                  <div className="flex items-center gap-3 bg-background/80 rounded-full px-6 py-3 border">
-                    <Plane className="h-5 w-5 text-foreground" />
-                    <span className="font-medium">Planning adventures</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Technical Expertise */}
-          <div className="max-w-4xl mx-auto mb-16 text-center">
-            <div className="space-y-4">
-              <div className="w-16 h-px bg-border mx-auto"></div>
-              <h3 className="text-2xl font-bold">Technical Expertise</h3>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                Here's the toolkit I use to bring ideas to life—from frontend frameworks to backend systems, I'm always
-                expanding my skills to stay at the forefront of technology.
+      {/* Professional About Section - Mimicking Reference Style */}
+      <section
+        id="about"
+        className="py-20 bg-gradient-to-b from-gray-50 to-gray-200 dark:from-gray-900 dark:to-gray-800 overflow-hidden"
+      >
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
+                About <span className="text-gray-600 dark:text-gray-400">Me</span>
+              </h2>
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                Discover my journey, passions, and the story behind my work
               </p>
-              <div className="w-16 h-px bg-border mx-auto"></div>
             </div>
-          </div>
-          {/* Skills Grid */}
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
-            {skills.map((skillGroup) => (
-              <Card key={skillGroup.category} className="text-center group hover:shadow-lg transition-all duration-300">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2 justify-center group-hover:text-foreground/80 transition-colors">
-                    {skillGroup.category === "Frontend" && <Globe className="h-5 w-5" />}
-                    {skillGroup.category === "Backend" && <Server className="h-5 w-5" />}
-                    {skillGroup.category === "DevOps" && <Database className="h-5 w-5" />}
-                    {skillGroup.category === "Tools" && <GitBranch className="h-5 w-5" />}
-                    {skillGroup.category}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2 justify-center">
-                    {skillGroup.items.map((skill) => (
-                      <Badge key={skill} variant="secondary" className="hover:bg-muted transition-colors">
-                        {skill}
-                      </Badge>
-                    ))}
+
+            <div className="flex flex-col lg:flex-row gap-12">
+              {/* Profile Image */}
+              <div className="lg:w-1/3 flex justify-center lg:justify-start">
+                <Avatar className="w-80 h-80 shadow-xl hover:rotate-3 transition-transform duration-300">
+                  <AvatarImage src="/avatar.jpg" alt="Dat Pham" className="object-cover" />
+                  <AvatarFallback className="text-6xl font-bold bg-gray-200 text-gray-900">DP</AvatarFallback>
+                </Avatar>
+              </div>
+
+              {/* Content Grid */}
+              <div className="lg:w-2/3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {/* Bio */}
+                  <div className="flex flex-col">
+                    <div className="flex items-center space-x-3 mb-2">
+                      <div className="p-4 bg-gray-900 dark:bg-white rounded-full shadow-lg flex items-center justify-center text-white dark:text-gray-900 shrink-0">
+                        <Users className="text-lg" />
+                      </div>
+                      <h4 className="text-lg font-medium text-gray-900 dark:text-white">Bio</h4>
+                    </div>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed whitespace-pre-line">
+                      Final-year Software Engineering student with 1+ years of hands-on experience. Passionate about
+                      creating user-friendly and scalable web applications.
+                    </p>
                   </div>
-                </CardContent>
-              </Card>
-            ))}
+
+                  {/* Hobbies */}
+                  <div className="flex flex-col">
+                    <div className="flex items-center space-x-3 mb-2">
+                      <div className="p-4 bg-gray-700 dark:bg-gray-300 rounded-full shadow-lg flex items-center justify-center text-white dark:text-gray-900 shrink-0">
+                        <Activity className="text-lg" />
+                      </div>
+                      <h4 className="text-lg font-medium text-gray-900 dark:text-white">Hobbies</h4>
+                    </div>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed whitespace-pre-line">
+                      Shooting hoops, planning adventures, exploring new technologies, and contributing to open-source
+                      projects.
+                    </p>
+                  </div>
+
+                  {/* Languages */}
+                  <div className="flex flex-col">
+                    <div className="flex items-center space-x-3 mb-2">
+                      <div className="p-4 bg-gray-600 dark:bg-gray-400 rounded-full shadow-lg flex items-center justify-center text-white dark:text-gray-900 shrink-0">
+                        <Globe className="text-lg" />
+                      </div>
+                      <h4 className="text-lg font-medium text-gray-900 dark:text-white">Languages</h4>
+                    </div>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed whitespace-pre-line">
+                      Fluent in Vietnamese and English. Currently learning Mandarin.
+                    </p>
+                  </div>
+
+                  {/* Contact */}
+                  <div className="flex flex-col">
+                    <div className="flex items-center space-x-3 mb-2">
+                      <div className="p-4 bg-gray-800 dark:bg-gray-200 rounded-full shadow-lg flex items-center justify-center text-white dark:text-gray-900 shrink-0">
+                        <Mail className="text-lg" />
+                      </div>
+                      <h4 className="text-lg font-medium text-gray-900 dark:text-white">Contact</h4>
+                    </div>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed whitespace-pre-line">
+                      Email: tiendat041202@gmail.com <br />
+                      LinkedIn: linkedin.com/in/dat-pham-4b79b0219 <br />
+                    </p>
+                  </div>
+
+                  {/* Location */}
+                  <div className="flex flex-col">
+                    <div className="flex items-center space-x-3 mb-2">
+                      <div className="p-4 bg-gray-500 dark:bg-gray-500 rounded-full shadow-lg flex items-center justify-center text-white shrink-0">
+                        <MapPin className="text-lg" />
+                      </div>
+                      <h4 className="text-lg font-medium text-gray-900 dark:text-white">Location</h4>
+                    </div>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed whitespace-pre-line">
+                      Based in Melbourne, Australia. Available for remote work worldwide.
+                    </p>
+                  </div>
+
+                  {/* Education */}
+                  <div className="flex flex-col">
+                    <div className="flex items-center space-x-3 mb-2">
+                      <div className="p-4 bg-gray-400 dark:bg-gray-600 rounded-full shadow-lg flex items-center justify-center text-white dark:text-white shrink-0">
+                        <Code className="text-lg" />
+                      </div>
+                      <h4 className="text-lg font-medium text-gray-900 dark:text-white">Education</h4>
+                    </div>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed whitespace-pre-line">
+                      Bachelor of Software Engineering, Swinburne University of Technology (2021-2025). Specialized in full-stack
+                      development.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Social Links and CTA */}
+                <div className="mt-8 flex flex-col sm:flex-row items-center gap-6">
+                  <div className="flex items-center space-x-4">
+                    <span className="text-gray-700 dark:text-gray-300 font-medium">Follow me on:</span>
+                    <div className="flex space-x-3">
+                      <Link
+                        href="https://www.linkedin.com/in/dat-pham-4b79b0219/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1"
+                      >
+                        <Linkedin className="text-lg" />
+                      </Link>
+                      <Link
+                        href="https://github.com/datpham0412"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1"
+                      >
+                        <Github className="text-lg" />
+                      </Link>
+                      <Link
+                        href="mailto:tiendat041202@gmail.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1"
+                      >
+                        <Mail className="text-lg" />
+                      </Link>
+                    </div>
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Link
+                      href="#"
+                      className="inline-flex items-center justify-center px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-semibold rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
+                    >
+                      <Download className="mr-2" />
+                      Download CV
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
