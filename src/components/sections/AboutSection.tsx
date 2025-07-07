@@ -11,6 +11,8 @@ import {
   Activity,
   MapPin,
   Download,
+  BookOpen,
+  Heart,
 } from "lucide-react"
 import Link from "next/link"
 import { SOCIAL_LINKS, PERSONAL_INFO } from "@/data/constants"
@@ -62,7 +64,7 @@ export default function AboutSection() {
                 <div className="flex flex-col">
                   <div className="flex items-center space-x-3 mb-2">
                     <div className="p-4 bg-gray-700 dark:bg-gray-300 rounded-full shadow-lg flex items-center justify-center text-white dark:text-gray-900 shrink-0">
-                      <Activity className="text-lg" />
+                      <Heart className="text-lg" />
                     </div>
                     <h4 className="text-lg font-medium text-gray-900 dark:text-white">Hobbies</h4>
                   </div>
@@ -116,7 +118,7 @@ export default function AboutSection() {
                 <div className="flex flex-col">
                   <div className="flex items-center space-x-3 mb-2">
                     <div className="p-4 bg-gray-400 dark:bg-gray-600 rounded-full shadow-lg flex items-center justify-center text-white dark:text-white shrink-0">
-                      <Code className="text-lg" />
+                      <BookOpen className="text-lg" />
                     </div>
                     <h4 className="text-lg font-medium text-gray-900 dark:text-white">Education</h4>
                   </div>
