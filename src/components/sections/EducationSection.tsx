@@ -18,7 +18,7 @@ export default function EducationSection() {
             {/* University Education */}
             <div className="group h-full">
               <a 
-                href="https://www.swinburne.edu.au/" 
+                href="https://www.swinburne.edu.au/course/undergraduate/bachelor-of-engineering-honours-professional/software/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="block h-full"
@@ -29,7 +29,7 @@ export default function EducationSection() {
                     <BookOpen className="text-2xl" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">Bachelor of Engineering</h3>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">Bachelor of Engineering (Honours) (Professional)</h3>
                     <h4 className="text-lg font-semibold text-gray-600 dark:text-gray-400 mb-1">
                       Software Engineering
                     </h4>
