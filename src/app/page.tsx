@@ -7,6 +7,7 @@ import SkillsSection from "@/components/sections/SkillsSection"
 import EducationSection from "@/components/sections/EducationSection"
 import ProjectsSection from "@/components/sections/ProjectsSection"
 import ExperienceSection from "@/components/sections/ExperienceSection"
+import TestimonialsSection from "@/components/sections/TestimonialsSection"
 import ContactSection from "@/components/sections/ContactSection"
 import Footer from "@/components/layout/Footer"
 
@@ -20,6 +21,7 @@ export default function Portfolio() {
       <EducationSection />
       <ProjectsSection />
       <ExperienceSection />
+      <TestimonialsSection />
       <ContactSection />
       <Footer />
     </div>
