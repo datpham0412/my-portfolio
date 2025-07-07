@@ -11,7 +11,7 @@ import TestimonialsSection from "@/components/sections/TestimonialsSection"
 import ContactSection from "@/components/sections/ContactSection"
 import Footer from "@/components/layout/Footer"
 import GoalsSection from "@/components/sections/GoalsSection"
-import { Server, Cloud, Activity, Code } from "lucide-react"
+import LeetCodeSection from "@/components/sections/LeetCodeSection"
 
 export default function Portfolio() {
   return (
@@ -20,11 +20,12 @@ export default function Portfolio() {
       <HeroSection />
       <AboutSection />
       <SkillsSection />
-      <EducationSection />
-      <ProjectsSection />
       <GoalsSection />
+      <EducationSection />
       <ExperienceSection />
+      <ProjectsSection />
       <TestimonialsSection />
+      <LeetCodeSection />
       <ContactSection />
       <Footer />
     </div>
