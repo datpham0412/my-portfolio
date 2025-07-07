@@ -116,7 +116,7 @@ export default function EducationSection() {
                       High School for Gifted Students
                     </h3>
                     <h4 className="text-lg font-semibold text-gray-600 dark:text-gray-400 mb-1">Major: Chemistry</h4>
-                    <p className="text-gray-600 dark:text-gray-400 font-medium mb-2">Top 1 High School in Vietnam</p>
+                    <p className="text-gray-600 dark:text-gray-400 font-medium mb-2">Top 10 High School in Vietnam</p>
                     <div className="flex flex-wrap gap-3 text-sm text-gray-500 dark:text-gray-400 mb-3">
                       <span className="flex items-center">
                         <Calendar className="mr-1 h-4 w-4" />
