@@ -123,7 +123,10 @@ export default function ProjectsSection() {
                     <div className="w-16 h-16 bg-gray-700 dark:bg-gray-300 rounded-full flex items-center justify-center text-white dark:text-gray-900 mx-auto mb-4 shadow-lg transition-all duration-300">
                       <IconComponent className="text-2xl" />
                     </div>
-                    <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{project.title}</h4>
+                    <div className="flex items-center justify-center gap-2 mb-2">
+                      <h4 className="text-lg font-bold text-gray-900 dark:text-white">{project.title}</h4>
+                      <Github className="inline h-4 w-4 text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-900 transition-colors duration-200" />
+                    </div>
                     <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
                       {project.description}
                     </p>
