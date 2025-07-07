@@ -4,7 +4,7 @@ export interface Project {
   tech: string[]
   image: string
   github: string | null
-  live: string
+  live: string | null
   featured: boolean
   privateRepo?: boolean
 }
@@ -29,6 +29,16 @@ export const projects: Project[] = [
     live: "https://dev.questps.com.au/",
     featured: true,
     privateRepo: true,
+  },
+  {
+    title: "Covid-19 Prediction Model",
+    description: "A machine learning model that predicts the number of cases of Covid-19 in Australia.",
+    tech: ["Python", "Pandas", "Scikit-learn", "Matplotlib", "Seaborn", "C++"],
+    image: "/covid_prediction.png",
+    github: "https://github.com/datpham0412/covid19-prediction-model",
+    live: null,
+    featured: true,
+    privateRepo: false,
   },
   {
     title: "Devto Clone",

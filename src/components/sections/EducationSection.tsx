@@ -115,7 +115,7 @@ export default function EducationSection() {
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">
                       High School for Gifted Students
                     </h3>
-                    <h4 className="text-lg font-semibold text-gray-600 dark:text-gray-400 mb-1">Major: Informatics</h4>
+                    <h4 className="text-lg font-semibold text-gray-600 dark:text-gray-400 mb-1">Major: Chemistry</h4>
                     <p className="text-gray-600 dark:text-gray-400 font-medium mb-2">Top 1 High School in Vietnam</p>
                     <div className="flex flex-wrap gap-3 text-sm text-gray-500 dark:text-gray-400 mb-3">
                       <span className="flex items-center">
