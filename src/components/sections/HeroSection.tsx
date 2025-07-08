@@ -77,7 +77,7 @@ export default function HeroSection() {
                 className="shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                 asChild
               >
-                <Link href="#projects">
+                <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
                   <Download className="mr-2 h-5 w-5" />
                   Download CV
                 </Link>
