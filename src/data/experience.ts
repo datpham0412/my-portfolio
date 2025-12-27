@@ -14,7 +14,7 @@ export const experience: Experience[] = [
     title: "Software Engineer Intern",
     company: "Quest Payment Systems",
     companyUrl: "https://questps.com.au/",
-    period: "Dec 2023 - Dec 2024",
+    period: "Dec 2023 - Present",
     location: "Melbourne, Australia",
     type: "Software Development",
     description:
